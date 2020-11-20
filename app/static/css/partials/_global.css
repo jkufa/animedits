@@ -26,3 +26,8 @@ a:hover {
   outline: none !important;
   box-shadow: none;
 }
+
+:hover {
+  transition: 1s ease;
+  opacity: 1;
+}

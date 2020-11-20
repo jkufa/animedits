@@ -5,7 +5,7 @@ from sqlalchemy.sql.expression import func
 from flask_sqlalchemy import SQLAlchemy
 
 file_path = os.path.abspath(os.getcwd())+"/app/db/app.db"
-print("sqlite:////"+file_path)
+# print("sqlite:////"+file_path)
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////'+file_path
 db = SQLAlchemy(app)
