@@ -75,6 +75,13 @@
   text-align: right;
   padding-top: 15px;
   z-index: 11;
+  padding-right: 10px;
+  /* background: var(--my-black); */
+  /* filter: drop-shadow(5px 5px 5px rgba(0,0,0,0.5)); */
+}
+
+.creator-tag a:hover{
+  opacity: 1;
 }
 
 .row {
@@ -90,18 +97,19 @@
 }
 
 .row button {
+  width: 100px;
   margin-top: 5px;
   text-transform:uppercase;
-  filter: drop-shadow(5px 5px 5px rgba(0,0,0,0.5));
 }
 
 .row .btn-link {
+  width: 100px;
   border-radius: 0%;
   color:white;
 }
 
 .row .btn-link:hover{
-  width: 125px;
+  width: 100px;
   border-radius: 0%;
   background-color: #1f1f1f;
   opacity: .25;

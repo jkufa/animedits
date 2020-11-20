@@ -8,8 +8,8 @@
       </button>
       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="color: {{ color }}">
         <a class="dropdown-item" href="#" style="color: {{ color }}">About</a>
-        <a class="dropdown-item" href="#" style="color: {{ color }}">Source</a>
         <a class="dropdown-item" href="#" style="color: {{ color }}">Library</a>
+        <a class="dropdown-item" href="#" style="color: {{ color }}">Source</a>
         <a class="dropdown-item" href="#" style="color: {{ color }}">Donate</a>
       </div>
     </div>
@@ -17,12 +17,12 @@
     <div class="bg-image" id="wrapper" style="background-image: url({{ image }}")></div>
     <div class="container">
       <div class="video-container">
-        <div class="creator-tag" style="color: {{ color }}">Created By @{{ query.creator_tag }}</div>
+        <div class="creator-tag" ><a href="{{ query.url }}" style="color: {{ color }}">Created By @{{ query.creator_tag }}</a></div>
         <video id="{{ query.id }}" autoplay loop><source src="{{ video }}" type="video/mp4"></video>
         <div class="row">
-          <div class="col text-center"><button type="button" class="btn btn-link" onclick="window.location.href='/'">Previous</button></div>
-          <div class="co1 offset-sm-1 text-center mid"><a>{{ query.anime_name }}</br>{{ artist_song }}</a></div>
-          <div class="col offset-sm-1 text-center"><button type="button" class="btn btn-link" onclick="window.location.href='/'">New</button></div>
+          <div class="col text-left"><button type="button" class="btn btn-link" onclick="window.location.href='/'">Previous</button></div>
+          <div class="co1 text-center mid"><a>{{ query.anime_name }}</br>{{ artist_song }}</a></div>
+          <div class="col text-right"><button type="button" class="btn btn-link" onclick="window.location.href='/'">New</button></div>
         </div>
       </div>
     </div>

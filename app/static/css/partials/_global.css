@@ -10,6 +10,14 @@ html,body {
   height:100vh; 
 }
 
+a {
+  text-decoration: none; /* no underline */
+}
+
+a:hover {
+  text-decoration: none; /* no underline */
+}
+
 #wrapper {
   min-height: 100%; 
 }
