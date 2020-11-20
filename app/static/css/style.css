@@ -69,6 +69,14 @@
   transition: .6s ease;
 }
 
+.creator-tag {
+  font-size: 12px;
+  opacity: .5;
+  text-align: right;
+  padding-top: 15px;
+  z-index: 11;
+}
+
 .row {
   margin-left: 1px;
   padding-top: 10px;

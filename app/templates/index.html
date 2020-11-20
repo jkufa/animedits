@@ -16,8 +16,8 @@
   </nav>
     <div class="bg-image" id="wrapper" style="background-image: url({{ image }}")></div>
     <div class="container">
-      <a>created by: </a>
       <div class="video-container">
+        <div class="creator-tag" style="color: {{ color }}">Created By @{{ query.creator_tag }}</div>
         <video id="{{ query.id }}" autoplay loop><source src="{{ video }}" type="video/mp4"></video>
         <div class="row">
           <div class="col text-center"><button type="button" class="btn btn-link" onclick="window.location.href='/'">Previous</button></div>
