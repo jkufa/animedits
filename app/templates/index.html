@@ -1,13 +1,13 @@
 
 {% extends "_base.html" %}
   {% block body %}
-  <script type="text/javascript">window.location.hash="{{ query.id }}";</script>
+  <!-- <script type="text/javascript">window.location.hash="{{ curr_edit.id }}";</script> -->
   <nav class="navbar fixed-top navbar-expand-lg navbar-dark nav">
     <div class="dropdown" style="color: {{ color }}">
       <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: {{ color }}">
         <a style="color: {{ color }}">ANIMEDITS</a>
       </button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="color: {{ color }}">
+      <div class="dropdown-menu animate slideIn" aria-labelledby="dropdownMenuButton" style="color: {{ color }}">
         <a class="dropdown-item" href="#" style="color: {{ color }}">About</a>
         <a class="dropdown-item" href="#" style="color: {{ color }}">Library</a>
         <a class="dropdown-item" href="#" style="color: {{ color }}">Source</a>
@@ -18,11 +18,31 @@
     <div class="bg-image" id="wrapper" style="background-image: url({{ image }}")></div>
     <div class="container">
       <div class="video-container">
-        <div class="creator-tag" ><a href="{{ query.url }}">Created By @{{ query.creator_tag }}</a></div>
-        <video id="{{ query.id }}" autoplay loop><source src="{{ video }}" type="video/mp4"></video>
-        <div class="row">
-          <div class="col text-left"><button type="button" id="prev" class="btn btn-link" onclick="window.location.href='/'">Previous</button></div>
-          <div class="co1 text-center mid"><a>{{ query.anime_name }}</br>{{ artist_song }}</a></div>
+        {% if curr_edit.creator_tag != "" %}
+          <div class="creator-tag" ><a href="{{ curr_edit.url }}">Created By @{{ curr_edit.creator_tag }}</a></div>
+        {% endif %}
+        <video id="video" autoplay loop><source src="{{ video }}" type="video/mp4"></video>
+          <div class="row">
+            <div class="col text-left">
+              <form action="" method="post">
+                <button name="prev" value="{{ prev_edit_id }}" type="submit" id="prev" class="btn btn-link">Previous</button>
+                <!-- <button name="prev" value="{{ curr_edit.id }}" type="button" id="prev" class="btn btn-link" onclick="window.location.href='/'+{{ curr_edit.id }}">Previous</button> -->
+              <!-- <input type="submit" name="upvote" value="Upvote" /> -->
+            </form>
+          </div>
+          <div class="co1 text-center mid"><a>
+            {% if curr_edit.anime_name|length > 46 %}
+            <div class="marquee"><p>{{ curr_edit.anime_name }}</p></div>
+            {% else %}
+              {{ curr_edit.anime_name }}
+            {% endif %}
+            </br>
+            {% if artist_song|length > 46 %}
+            <div class="marquee"><p>{{ artist_song }}</p></div>
+            {% else %}
+              {{ artist_song }}
+            {% endif %}
+          </a></div>
           <div class="col text-right"><button type="button" class="btn btn-link" onclick="window.location.href='/'">New</button></div>
         </div>
       </div>

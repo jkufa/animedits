@@ -1,4 +1,4 @@
 {
-  "python.pythonPath": "/home/jkufa/Octokitty/Personal/animedits/env/bin/python3.9",
+  "python.pythonPath": "venv/bin/python",
   "compile-hero.disable-compile-files-on-did-save-code": false
 }
